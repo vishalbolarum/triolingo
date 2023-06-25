@@ -6,7 +6,7 @@
   "engines": {
     "node": "16.14.0",
     "npm": "9.5.0"
-  }, 
+  },
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
@@ -23,6 +23,6 @@
     "openai": "^3.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^1.14.9"
   }
 }
