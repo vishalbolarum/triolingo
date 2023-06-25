@@ -1,0 +1,46 @@
+.log-in-page {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.log-in-page form {
+    border: 1px solid dimgray;
+    border-radius: 5px;
+    max-width: 520px; 
+    padding: 20px;
+    width: 100%;
+}
+
+.log-in-page form label {
+    font-size: 20px;
+    display: block;
+    margin: 0;
+}
+
+.disclaimer {
+    color: dimgray;
+    font-size: 13px;
+    margin: 10px 0 0 0;
+}
+
+.log-in-page form input {
+    background-color: transparent;
+    border: 1px solid dimgray;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 15px;
+    margin: 20px 0;
+    padding: 6px 12px;
+    width: 100%;
+}
+
+.log-in-page .button-container {
+    display: flex;
+    justify-content: flex-end;
+}

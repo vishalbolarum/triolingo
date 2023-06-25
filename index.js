@@ -1,36 +1,34 @@
 require('dotenv').config()
-const app = require('express')()
+const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const path = require('path')
 const words = require('./data.js')
 
+const app = express()
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // [START] OPENAI
-
 const { Configuration, OpenAIApi } = require('openai')
-const configuration = new Configuration({
+const openai = new OpenAIApi(new Configuration({
     apiKey: process.env.OPENAI
-})
-const openai = new OpenAIApi(configuration)
+}))
 
 app.get('/randomWord', async (req, res) => {
 
     const randomWord = words[Math.floor(Math.random()*words.length)]
 
-    const response = await openai.createChatCompletion({
-        model: 'gpt-3.5-turbo',
-        messages: [
-            {
-                role: "user",
-                content: `Generate a tricky sentence including '${randomWord.zh}'. Return the response as JSON with key zh and en.`
-            }
-        ]
-    })
-
-
+    // const response = await openai.createChatCompletion({
+    //     model: 'gpt-3.5-turbo',
+    //     messages: [
+    //         {
+    //             role: "user",
+    //             content: `Generate a tricky sentence including '${randomWord.zh}'. Return the response as JSON with key zh and en.`
+    //         }
+    //     ]
+    // })
     
     try { 
         const sentence = JSON.parse(response.data.choices[0].message.content)
@@ -57,4 +55,9 @@ app.get('/dictionary', async (req, res) => {
     res.json(dictionary)
 })
 
-app.listen(4000)
+// If in production, serve the client's build folder.
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client/build')))
+}
+
+app.listen(process.env.PORT || 4000)

@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit"
-import axios from "axios"
 
 export const dictionarySlice = createSlice({
     name: 'dictionary',

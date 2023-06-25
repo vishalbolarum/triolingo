@@ -1,13 +1,12 @@
-import './App.css'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import ZhToEn from './components/ZhToEn'
-import EnToZh from './components/EnToZh'
-import Loading from './components/Loading/Loading'
+import ZhToEn from '../ZhToEn'
+import EnToZh from '../EnToZh'
+import Loading from '../Loading/Loading'
 import axios from 'axios'
-import { load } from './features/dictionary/dictionary'
+import { load } from '../../features/dictionary/dictionary'
 
-const App = () => {
+const Practice = () => {
 
   const dispatch = useDispatch()
 
@@ -44,4 +43,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Practice
