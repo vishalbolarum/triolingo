@@ -1,0 +1,139 @@
+html {
+  color: white;
+  background-color: black;
+}
+
+section {
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+
+/*The h1 tag denotes the instruction at the top of the screen.*/
+
+h1 {
+  color: grey;
+  font-size: 15px;
+  font-weight: normal;
+  margin: 10px 0;
+  text-align: left;
+}
+
+/*The h2 tag denotes the sentence to be translated.*/
+
+h2 {
+  font-weight: normal;
+}
+
+h2 .zh {
+  font-size: 30px;
+}
+
+h2 .en {
+  font-size: 25px;
+}
+
+h2, p {
+  margin: 0;
+}
+
+p {
+  font-size: 20px;
+  text-align: left;
+}
+
+/* The i tag denotes pinyin beneath Chinese characters. */
+
+i {
+  color: grey;
+  display: block;
+  font-size: 13px;
+  font-style: normal;
+  text-align: center;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  height: fit-content;
+  padding: 10px;
+}
+
+button:hover {
+  opacity: 0.75;
+}
+
+/* Chinese Sentence Section */
+
+.zh {
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Audio Section */
+
+.audio button {
+  background-color: black;
+  border: 1px solid grey;
+  font-size: 20px;
+  margin: 0 10px 0 0;
+}
+
+/* Selection & Choice Section */
+
+.translation > div {
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  min-height: 100px;
+  padding: 10px;
+}
+
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.word {
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+  height: fit-content;
+  margin: 0;
+  padding: 5px 10px;
+  user-select: none;
+}
+
+.en p {
+  font-size: 15px;
+}
+
+.word p {
+  text-align: center;
+}
+
+/* Bottom Bar Section */
+
+.options, .correct, .incorrect {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  position: fixed;
+  width: 100%;
+}
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
