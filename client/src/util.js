@@ -2,11 +2,6 @@
 export const textToSpeech = (text, rate = 1, lang = 'zh-CN') => { // Default playback rate is 1 and language is Mandarin.
     const msg = new SpeechSynthesisUtterance(text)
     msg.lang = lang
-
-    if (lang = 'zh-CN') { // If the text is Chinese...
-        msg.text = text.replace(/\s/g, '') // ...remove the whitespaces.
-    }
-
     msg.rate = rate
     window.speechSynthesis.cancel() // In order to work on Chrome.
     window.speechSynthesis.speak(msg)
