@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import ZhToEn from '../ZhToEn'
 import EnToZh from '../EnToZh'
 import Loading from '../Loading/Loading'
@@ -9,6 +10,7 @@ import { load } from '../../features/dictionary/dictionary'
 const Practice = () => {
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [word, setWord] = useState() // This is the original sentence data.
   const [activeRecall, setActiveRecall] = useState(false)
@@ -29,9 +31,13 @@ const Practice = () => {
 
     (async () => {
 
-      await fetchDictionary()
-
-      await nextQuestion()
+      try {
+        await axios.get('/isLoggedIn')
+        await fetchDictionary()
+        await nextQuestion()
+      } catch(e) {
+        navigate('/logIn')
+      }
 
     })()
 

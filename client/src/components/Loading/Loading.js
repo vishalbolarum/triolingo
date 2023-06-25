@@ -3,7 +3,7 @@ import ClipLoader from 'react-spinners/MoonLoader'
 
 const Loading = () => {
     return (
-        <div class='loading'>
+        <div className='loading'>
             <ClipLoader
                 color='#ffffff'
                 size={100}
